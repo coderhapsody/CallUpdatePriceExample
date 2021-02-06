@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://allegrodevelopment.com/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://allegrodevelopment.com/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://allegrodevelopment.com/">
+      <s:import namespace="http://allegrodevelopment.com/PriceIndexDS.xsd" />
+      <s:import schemaLocation="http://localhost:8000/Horizon/PriceValueWS.asmx?schema=PriceIndexDS" namespace="http://allegrodevelopment.com/PriceIndexDS.xsd" />
+      <s:element name="UpdatePrices">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pricevalueDataTable">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+                <s:attribute fixed="http://allegrodevelopment.com/PriceIndexDS.xsd" name="namespace" />
+                <s:attribute fixed="pricevalueDataTable" name="tableTypeName" />
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdatePricesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UpdatePricesResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="UpdatePricesSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdatePrices" />
+  </wsdl:message>
+  <wsdl:message name="UpdatePricesSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdatePricesResponse" />
+  </wsdl:message>
+  <wsdl:portType name="PriceValueWSSoap">
+    <wsdl:operation name="UpdatePrices">
+      <wsdl:input message="tns:UpdatePricesSoapIn" />
+      <wsdl:output message="tns:UpdatePricesSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="PriceValueWSSoap" type="tns:PriceValueWSSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="UpdatePrices">
+      <soap:operation soapAction="http://allegrodevelopment.com/UpdatePrices" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="PriceValueWSSoap12" type="tns:PriceValueWSSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="UpdatePrices">
+      <soap12:operation soapAction="http://allegrodevelopment.com/UpdatePrices" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="PriceValueWS">
+    <wsdl:port name="PriceValueWSSoap" binding="tns:PriceValueWSSoap">
+      <soap:address location="http://localhost:8000/Horizon/PriceValueWS.asmx" />
+    </wsdl:port>
+    <wsdl:port name="PriceValueWSSoap12" binding="tns:PriceValueWSSoap12">
+      <soap12:address location="http://localhost:8000/Horizon/PriceValueWS.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

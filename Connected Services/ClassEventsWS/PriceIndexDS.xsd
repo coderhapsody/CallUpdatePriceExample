@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns="http://allegrodevelopment.com/PriceIndexDS.xsd" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:mstns="http://allegrodevelopment.com/PriceIndexDS.xsd" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://allegrodevelopment.com/PriceIndexDS.xsd" id="PriceIndexDS" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element msdata:IsDataSet="true" msdata:UseCurrentLocale="true" name="PriceIndexDS">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="priceindex">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="priceindex" type="xs:string" />
+              <xs:element minOccurs="0" name="description" type="xs:string" />
+              <xs:element minOccurs="0" name="product" type="xs:string" />
+              <xs:element name="indextype" type="xs:string" />
+              <xs:element minOccurs="0" name="unit" type="xs:string" />
+              <xs:element minOccurs="0" name="currency" type="xs:string" />
+              <xs:element minOccurs="0" name="marketarea" type="xs:string" />
+              <xs:element name="status" type="xs:string" />
+              <xs:element minOccurs="0" name="priceindexclass" type="xs:string" />
+              <xs:element minOccurs="0" name="forwardindex" type="xs:string" />
+              <xs:element name="forwardlevel" type="xs:string" />
+              <xs:element minOccurs="0" name="forwardbasis" type="xs:string" />
+              <xs:element minOccurs="0" name="forwardpremium" type="xs:string" />
+              <xs:element name="forwarddiff" type="xs:decimal" />
+              <xs:element minOccurs="0" name="forwardtimeunit" type="xs:string" />
+              <xs:element name="holidaycalendar" type="xs:string" />
+              <xs:element minOccurs="0" name="pricesource" type="xs:string" />
+              <xs:element minOccurs="0" name="pricecalendar" type="xs:boolean" />
+              <xs:element minOccurs="0" name="pricesourcecode" type="xs:string" />
+              <xs:element minOccurs="0" name="timezone" type="xs:string" />
+              <xs:element name="volatilityindex" type="xs:string" />
+              <xs:element minOccurs="0" name="tradeidx" type="xs:boolean" />
+              <xs:element minOccurs="0" name="marketidx" type="xs:boolean" />
+              <xs:element minOccurs="0" name="extrapolation" type="xs:boolean" />
+              <xs:element minOccurs="0" name="interpolation" type="xs:boolean" />
+              <xs:element minOccurs="0" name="sourcegroup" type="xs:string" />
+              <xs:element minOccurs="0" name="publisher" type="xs:string" />
+              <xs:element minOccurs="0" name="incoterms" type="xs:string" />
+              <xs:element minOccurs="0" name="tsperiod" type="xs:string" />
+              <xs:element minOccurs="0" name="document" type="xs:boolean" />
+              <xs:element minOccurs="0" name="calendar" type="xs:boolean" />
+              <xs:element minOccurs="0" name="correspondence" type="xs:boolean" />
+              <xs:element minOccurs="0" name="remark" type="xs:boolean" />
+              <xs:element minOccurs="0" name="collaboration" type="xs:string" />
+              <xs:element name="creationname" type="xs:string" />
+              <xs:element name="creationdate" type="xs:dateTime" />
+              <xs:element minOccurs="0" name="revisionname" type="xs:string" />
+              <xs:element minOccurs="0" name="revisiondate" type="xs:dateTime" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="pricecomposite">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="compositeindex" type="xs:string" />
+              <xs:element name="surrogate" type="xs:decimal" />
+              <xs:element name="pricetype" type="xs:string" />
+              <xs:element minOccurs="0" name="priceindex" type="xs:string" />
+              <xs:element name="pricelevel" type="xs:string" />
+              <xs:element name="pricediff" type="xs:decimal" />
+              <xs:element name="factor" type="xs:decimal" />
+              <xs:element minOccurs="0" name="factorindex" type="xs:string" />
+              <xs:element minOccurs="0" name="product" type="xs:string" />
+              <xs:element name="divisor" type="xs:decimal" />
+              <xs:element minOccurs="0" name="currency" type="xs:string" />
+              <xs:element minOccurs="0" name="unit" type="xs:string" />
+              <xs:element name="currencyconv" type="xs:boolean" />
+              <xs:element minOccurs="0" name="unitconv" type="xs:boolean" />
+              <xs:element minOccurs="0" name="determinationdate" type="xs:dateTime" />
+              <xs:element minOccurs="0" name="determinationtimeperiod" type="xs:string" />
+              <xs:element name="priceprecision" type="xs:decimal" />
+              <xs:element name="roundmethod" type="xs:string" />
+              <xs:element name="expfactor" type="xs:decimal" />
+              <xs:element minOccurs="0" name="timeperiod" type="xs:string" />
+              <xs:element minOccurs="0" name="conditional" type="xs:boolean" />
+              <xs:element minOccurs="0" name="conditionalindex" type="xs:string" />
+              <xs:element minOccurs="0" name="minvalue" type="xs:decimal" />
+              <xs:element minOccurs="0" name="maxvalue" type="xs:decimal" />
+              <xs:element minOccurs="0" name="tsperiod" type="xs:string" />
+              <xs:element name="promptoffsetdays" type="xs:decimal" />
+              <xs:element name="conditionaltype" type="xs:string" />
+              <xs:element minOccurs="0" name="referenceindex" type="xs:string" />
+              <xs:element name="creationname" type="xs:string" />
+              <xs:element name="creationdate" type="xs:dateTime" />
+              <xs:element minOccurs="0" name="revisionname" type="xs:string" />
+              <xs:element minOccurs="0" name="revisiondate" type="xs:dateTime" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="priceservice">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="priceindex" type="xs:string" />
+              <xs:element name="surrogate" type="xs:decimal" />
+              <xs:element minOccurs="0" name="service" type="xs:string" />
+              <xs:element minOccurs="0" name="contract" type="xs:string" />
+              <xs:element name="servicefactor" type="xs:decimal" />
+              <xs:element name="netback" type="xs:boolean" />
+              <xs:element minOccurs="0" name="feetype" type="xs:string" />
+              <xs:element minOccurs="0" name="pipeline" type="xs:string" />
+              <xs:element minOccurs="0" name="recpoint" type="xs:string" />
+              <xs:element minOccurs="0" name="reczone" type="xs:string" />
+              <xs:element minOccurs="0" name="delpoint" type="xs:string" />
+              <xs:element minOccurs="0" name="delzone" type="xs:string" />
+              <xs:element name="lossmethod" type="xs:string" />
+              <xs:element minOccurs="0" name="discount" type="xs:boolean" />
+              <xs:element minOccurs="0" name="demand" type="xs:boolean" />
+              <xs:element minOccurs="0" name="product" type="xs:string" />
+              <xs:element minOccurs="0" name="carrier" type="xs:string" />
+              <xs:element minOccurs="0" name="origin" type="xs:string" />
+              <xs:element minOccurs="0" name="destination" type="xs:string" />
+              <xs:element minOccurs="0" name="serviceindex" type="xs:string" />
+              <xs:element name="servicelevel" type="xs:string" />
+              <xs:element name="servicemethod" type="xs:string" />
+              <xs:element name="creationname" type="xs:string" />
+              <xs:element name="creationdate" type="xs:dateTime" />
+              <xs:element minOccurs="0" name="revisionname" type="xs:string" />
+              <xs:element minOccurs="0" name="revisiondate" type="xs:dateTime" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="priceindexcalendar">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="priceindex" type="xs:string" />
+              <xs:element name="calendardate" type="xs:dateTime" />
+              <xs:element name="creationname" type="xs:string" />
+              <xs:element name="creationdate" type="xs:dateTime" />
+              <xs:element minOccurs="0" name="revisionname" type="xs:string" />
+              <xs:element minOccurs="0" name="revisiondate" type="xs:dateTime" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="calculation">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element minOccurs="0" name="priceindex" type="xs:string" />
+              <xs:element minOccurs="0" name="valuationtime" type="xs:dateTime" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="adjustvalue">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="priceindex" type="xs:string" />
+              <xs:element name="begtime" type="xs:dateTime" />
+              <xs:element name="endtime" type="xs:dateTime" />
+              <xs:element name="gravadjust" type="xs:string" />
+              <xs:element name="creationname" type="xs:string" />
+              <xs:element name="creationdate" type="xs:dateTime" />
+              <xs:element minOccurs="0" name="revisionname" type="xs:string" />
+              <xs:element minOccurs="0" name="revisiondate" type="xs:dateTime" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="pricevalue">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="priceindex" type="xs:string" />
+              <xs:element name="pricedate" type="xs:dateTime" />
+              <xs:element name="surrogate" type="xs:decimal" />
+              <xs:element name="delivdate" type="xs:dateTime" />
+              <xs:element default="0" name="price" type="xs:decimal" />
+              <xs:element default="0" name="openprice" type="xs:decimal" />
+              <xs:element default="0" name="highprice" type="xs:decimal" />
+              <xs:element default="0" name="lowprice" type="xs:decimal" />
+              <xs:element minOccurs="0" name="strikeprice" type="xs:decimal" />
+              <xs:element minOccurs="0" name="callprice" type="xs:decimal" />
+              <xs:element minOccurs="0" name="putprice" type="xs:decimal" />
+              <xs:element minOccurs="0" name="tradevolume" type="xs:decimal" />
+              <xs:element minOccurs="0" name="openinterest" type="xs:decimal" />
+              <xs:element default="ACTUAL" name="actualstatus" type="xs:string" />
+              <xs:element minOccurs="0" name="gravity" type="xs:decimal" />
+              <xs:element default="false" name="verifstatus" type="xs:boolean" />
+              <xs:element default="false" name="intradayprice" type="xs:boolean" />
+              <xs:element default="false" name="daylightsaving" type="xs:boolean" />
+              <xs:element name="creationname" type="xs:string" />
+              <xs:element name="creationdate" type="xs:dateTime" />
+              <xs:element minOccurs="0" name="revisionname" type="xs:string" />
+              <xs:element minOccurs="0" name="revisiondate" type="xs:dateTime" />
+              <xs:element minOccurs="0" name="archive" type="xs:string" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique msdata:PrimaryKey="true" name="PriceIndexDSKey1">
+      <xs:selector xpath=".//mstns:priceindex" />
+      <xs:field xpath="mstns:priceindex" />
+    </xs:unique>
+    <xs:unique msdata:PrimaryKey="true" name="PriceIndexDSKey2">
+      <xs:selector xpath=".//mstns:pricecomposite" />
+      <xs:field xpath="mstns:compositeindex" />
+      <xs:field xpath="mstns:surrogate" />
+    </xs:unique>
+    <xs:unique msdata:PrimaryKey="true" name="PriceIndexDSKey3">
+      <xs:selector xpath=".//mstns:priceservice" />
+      <xs:field xpath="mstns:priceindex" />
+      <xs:field xpath="mstns:surrogate" />
+    </xs:unique>
+    <xs:unique msdata:PrimaryKey="true" name="PriceIndexDSKey4">
+      <xs:selector xpath=".//mstns:priceindexcalendar" />
+      <xs:field xpath="mstns:priceindex" />
+      <xs:field xpath="mstns:calendardate" />
+    </xs:unique>
+    <xs:unique msdata:PrimaryKey="true" name="PriceIndexDSKey5">
+      <xs:selector xpath=".//mstns:adjustvalue" />
+      <xs:field xpath="mstns:priceindex" />
+      <xs:field xpath="mstns:begtime" />
+      <xs:field xpath="mstns:endtime" />
+    </xs:unique>
+    <xs:unique msdata:PrimaryKey="true" name="Constraint1">
+      <xs:selector xpath=".//mstns:pricevalue" />
+      <xs:field xpath="mstns:priceindex" />
+      <xs:field xpath="mstns:pricedate" />
+      <xs:field xpath="mstns:surrogate" />
+    </xs:unique>
+    <xs:keyref name="priceindexpricevalue" refer="mstns:PriceIndexDSKey1">
+      <xs:selector xpath=".//mstns:pricevalue" />
+      <xs:field xpath="mstns:priceindex" />
+    </xs:keyref>
+    <xs:keyref name="priceindexadjustvalue" refer="mstns:PriceIndexDSKey1">
+      <xs:selector xpath=".//mstns:adjustvalue" />
+      <xs:field xpath="mstns:priceindex" />
+    </xs:keyref>
+    <xs:keyref name="priceindexpriceindexcalendar" refer="mstns:PriceIndexDSKey1">
+      <xs:selector xpath=".//mstns:priceindexcalendar" />
+      <xs:field xpath="mstns:priceindex" />
+    </xs:keyref>
+    <xs:keyref name="priceindexpriceservice" refer="mstns:PriceIndexDSKey1">
+      <xs:selector xpath=".//mstns:priceservice" />
+      <xs:field xpath="mstns:priceindex" />
+    </xs:keyref>
+    <xs:keyref name="priceindexpricecomposite" refer="mstns:PriceIndexDSKey1">
+      <xs:selector xpath=".//mstns:pricecomposite" />
+      <xs:field xpath="mstns:compositeindex" />
+    </xs:keyref>
+  </xs:element>
+</xs:schema>

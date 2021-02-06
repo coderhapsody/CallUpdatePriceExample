@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="735203dd-2ab3-4f2f-9581-57f82b46603c" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:8000/horizon/Price/PriceIndexWS.asmx" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="PriceIndexWS.wsdl" MetadataType="Wsdl" ID="a3750644-0d4a-4bbb-902e-c7742f083d85" SourceId="1" SourceUrl="http://localhost:8000/horizon/Price/PriceIndexWS.asmx?wsdl" />
+    <MetadataFile FileName="PriceIndexWS.disco" MetadataType="Disco" ID="2b7dd061-8981-4901-b007-825660b22241" SourceId="1" SourceUrl="http://localhost:8000/horizon/Price/PriceIndexWS.asmx?disco" />
+    <MetadataFile FileName="PriceIndexDS.xsd" MetadataType="Schema" ID="1145a1d6-48ec-4cdd-9bb1-033f0a241e7f" SourceId="1" SourceUrl="http://localhost:8000/horizon/Price/PriceIndexWS.asmx?schema=PriceIndexDS" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

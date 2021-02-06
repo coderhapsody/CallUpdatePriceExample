@@ -1,0 +1,353 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://allegrodevelopment.com/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://allegrodevelopment.com/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://allegrodevelopment.com/">
+      <s:import namespace="http://allegrodevelopment.com/PriceIndexDS.xsd" />
+      <s:import namespace="http://www.w3.org/2001/XMLSchema" />
+      <s:import schemaLocation="http://localhost:8000/horizon/Price/PriceIndexWS.asmx?schema=PriceIndexDS" namespace="http://allegrodevelopment.com/PriceIndexDS.xsd" />
+      <s:element name="RetrievePriceIndex">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="priceIndexDS">
+              <s:complexType>
+                <s:sequence>
+                  <s:any namespace="http://allegrodevelopment.com/PriceIndexDS.xsd" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="tableNames" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="criteria" type="tns:SelectCriteria" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="SelectCriteria">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="DateColumn" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="BegTime" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="EndTime" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="FilterByRelation" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="FilterDateByRelation" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="FilterByForeignKey" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="OverrideSanityCheck" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="DrillColumn" type="tns:ArrayOfString" />
+          <s:element minOccurs="0" maxOccurs="1" name="DbCriteria" type="tns:ArrayOfDbCriteria" />
+          <s:element minOccurs="0" maxOccurs="1" name="DbJoin" type="tns:ArrayOfDbJoin" />
+          <s:element minOccurs="0" maxOccurs="1" name="AdditionalInfoMap">
+            <s:complexType>
+              <s:sequence>
+                <s:element ref="s:schema" />
+                <s:any />
+              </s:sequence>
+            </s:complexType>
+          </s:element>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfDbCriteria">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="DbCriteria" nillable="true" type="tns:DbCriteria" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="DbCriteria">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="LogOperator" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="OpenParen" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DbTable" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DbColumn" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="RelOperator" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DbValue" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CloseParen" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DbValueListString" type="tns:ArrayOfString" />
+          <s:element minOccurs="0" maxOccurs="1" name="DbValueListInt" type="tns:ArrayOfInt" />
+          <s:element minOccurs="0" maxOccurs="1" name="SubqueryCriteriaGroup" type="tns:ArrayOfDbCriteria" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfInt">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="int" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfDbJoin">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="DbJoin" nillable="true" type="tns:DbJoin" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="DbJoin">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="DbTable" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DbColumn" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="JoinRelation" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="JoinTable" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="JoinColumn" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="RetrievePriceIndexResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RetrievePriceIndexResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RetrievePriceComposite">
+        <s:complexType />
+      </s:element>
+      <s:element name="RetrievePriceCompositeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RetrievePriceCompositeResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckPriceValueData">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="priceIndex" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckPriceValueDataResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CheckPriceValueDataResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdatePriceIndex">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="priceIndexDS">
+              <s:complexType>
+                <s:sequence>
+                  <s:any namespace="http://allegrodevelopment.com/PriceIndexDS.xsd" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="criteria" type="tns:SelectCriteria" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdatePriceIndexResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UpdatePriceIndexResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPriceIndexType">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="dataSetDS">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="priceindex" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPriceIndexTypeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetPriceIndexTypeResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="RetrievePriceIndexSoapIn">
+    <wsdl:part name="parameters" element="tns:RetrievePriceIndex" />
+  </wsdl:message>
+  <wsdl:message name="RetrievePriceIndexSoapOut">
+    <wsdl:part name="parameters" element="tns:RetrievePriceIndexResponse" />
+  </wsdl:message>
+  <wsdl:message name="RetrievePriceCompositeSoapIn">
+    <wsdl:part name="parameters" element="tns:RetrievePriceComposite" />
+  </wsdl:message>
+  <wsdl:message name="RetrievePriceCompositeSoapOut">
+    <wsdl:part name="parameters" element="tns:RetrievePriceCompositeResponse" />
+  </wsdl:message>
+  <wsdl:message name="CheckPriceValueDataSoapIn">
+    <wsdl:part name="parameters" element="tns:CheckPriceValueData" />
+  </wsdl:message>
+  <wsdl:message name="CheckPriceValueDataSoapOut">
+    <wsdl:part name="parameters" element="tns:CheckPriceValueDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdatePriceIndexSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdatePriceIndex" />
+  </wsdl:message>
+  <wsdl:message name="UpdatePriceIndexSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdatePriceIndexResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPriceIndexTypeSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPriceIndexType" />
+  </wsdl:message>
+  <wsdl:message name="GetPriceIndexTypeSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPriceIndexTypeResponse" />
+  </wsdl:message>
+  <wsdl:portType name="PriceIndexWSSoap">
+    <wsdl:operation name="RetrievePriceIndex">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Retrieve PriceIndex</wsdl:documentation>
+      <wsdl:input message="tns:RetrievePriceIndexSoapIn" />
+      <wsdl:output message="tns:RetrievePriceIndexSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RetrievePriceComposite">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Retrieve Price Composite</wsdl:documentation>
+      <wsdl:input message="tns:RetrievePriceCompositeSoapIn" />
+      <wsdl:output message="tns:RetrievePriceCompositeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckPriceValueData">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Retrieve Price Composite</wsdl:documentation>
+      <wsdl:input message="tns:CheckPriceValueDataSoapIn" />
+      <wsdl:output message="tns:CheckPriceValueDataSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePriceIndex">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Update PriceIndex</wsdl:documentation>
+      <wsdl:input message="tns:UpdatePriceIndexSoapIn" />
+      <wsdl:output message="tns:UpdatePriceIndexSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPriceIndexType">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get PriceIndexType</wsdl:documentation>
+      <wsdl:input message="tns:GetPriceIndexTypeSoapIn" />
+      <wsdl:output message="tns:GetPriceIndexTypeSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="PriceIndexWSSoap" type="tns:PriceIndexWSSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="RetrievePriceIndex">
+      <soap:operation soapAction="http://allegrodevelopment.com/RetrievePriceIndex" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetrievePriceComposite">
+      <soap:operation soapAction="http://allegrodevelopment.com/RetrievePriceComposite" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckPriceValueData">
+      <soap:operation soapAction="http://allegrodevelopment.com/CheckPriceValueData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePriceIndex">
+      <soap:operation soapAction="http://allegrodevelopment.com/UpdatePriceIndex" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPriceIndexType">
+      <soap:operation soapAction="http://allegrodevelopment.com/GetPriceIndexType" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="PriceIndexWSSoap12" type="tns:PriceIndexWSSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="RetrievePriceIndex">
+      <soap12:operation soapAction="http://allegrodevelopment.com/RetrievePriceIndex" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetrievePriceComposite">
+      <soap12:operation soapAction="http://allegrodevelopment.com/RetrievePriceComposite" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckPriceValueData">
+      <soap12:operation soapAction="http://allegrodevelopment.com/CheckPriceValueData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePriceIndex">
+      <soap12:operation soapAction="http://allegrodevelopment.com/UpdatePriceIndex" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPriceIndexType">
+      <soap12:operation soapAction="http://allegrodevelopment.com/GetPriceIndexType" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="PriceIndexWS">
+    <wsdl:port name="PriceIndexWSSoap" binding="tns:PriceIndexWSSoap">
+      <soap:address location="http://localhost:8000/horizon/Price/PriceIndexWS.asmx" />
+    </wsdl:port>
+    <wsdl:port name="PriceIndexWSSoap12" binding="tns:PriceIndexWSSoap12">
+      <soap12:address location="http://localhost:8000/horizon/Price/PriceIndexWS.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
